@@ -1,278 +1,153 @@
-Global Retail Sales Dashboard Using Power BI
-Project Overview
-
-The Global Retail Sales Dashboard is an interactive Business Intelligence project developed using Microsoft Power BI.
-
-This project focuses on analyzing global retail sales data to understand Sales, Profit, Discounts, Returns, Products, Customers, Regions, Customer Segments, and Shipping Performance.
-
-The dashboard provides interactive KPIs, charts, slicers, and drill-through analysis to help management understand business performance and make better data-driven decisions.
-
-Business Problem
-
-The company has a large amount of sales data, but it needs to understand where it is making profit and where it is facing problems.
-
-The main business challenges are:
-
-Profit performance varies across different regions.
-High discounts may reduce overall profit.
-Some customer segments contribute more profit than others.
-Returned orders can affect sales and profitability.
-Some products and categories generate more revenue than others.
-Different shipping modes have different costs and profitability.
-Regional manager performance may vary across locations.
-Project Objectives
-Analyze sales, profit, returns, and regional performance.
-Identify which regions and customer segments drive the most profit.
-Quantify how discounts and returns affect profitability.
-Track actual sales against regional targets.
-Identify top-performing products.
-Analyze shipping mode performance.
-Enable drill-through analysis from Region → Product → Customer.
-Provide regional managers with a single source of truth for performance.
-Support data-driven business decisions.
-Tools & Technologies
-Microsoft Power BI
-Power Query
-DAX
-Microsoft Excel
-Data Cleaning
-Data Transformation
-Data Modeling
-Data Visualization
-Business Intelligence
-Business Analytics
-Dataset
-
-The project uses the Global Superstore retail sales dataset.
-
-Tables Used
-Table	Type	Purpose
-Orders	Fact Table	Contains all sales transactions including order, ship, customer, product, sales, profit, discount, and quantity details
-Returns	Dimension Table	Identifies which orders were returned
-People	Dimension Table	Assigns a sales manager to each region
-Important Fields
-Order ID
-Order Date
-Ship Date
-Ship Mode
-Customer
-Segment
-Market
-Region
-Category
-Sub-Category
-Product Name
-Sales
-Quantity
-Discount
-Profit
-Shipping Cost
-Order Priority
-Project Workflow
-1. Data Collection
-
-Collected the Global Superstore dataset containing sales, customer, product, shipping, and return information.
-
-2. Data Cleaning & Transformation
-
-Used Power Query to:
-
-Check and handle missing/null values.
-Correct data types for dates, numbers, and categorical columns.
-Ensure Sales, Profit, Discount, and Quantity were treated as numerical fields.
-Format Order Date and Ship Date as date fields.
-Review Postal Code values and handle null values appropriately.
-Check duplicate and unwanted records.
-Verify categorical fields such as Region, Segment, Category, and Ship Mode.
-3. Data Modeling
+# Global Retail Sales Dashboard — Power BI
 
-Created a data model using:
+An interactive Power BI dashboard analyzing global retail sales, profit, discounts, returns, products, customers, and shipping performance to support data-driven business decisions.
 
-Orders as the Fact Table
-Returns as a Dimension Table
-People as a Dimension Table
-Relationships
-Orders ↔ Returns using Order ID
-Orders ↔ People using Region
-Key DAX Measures
-
-Total Sales = SUM(Orders[Sales])
-
-Total Profit = SUM(Orders[Profit])
+**Prepared by:** Velagada Dayana
 
-Total Quantity = SUM(Orders[Quantity])
+---
 
-Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)
+## 📌 Project Overview
 
-Return Rate % = DIVIDE(COUNTROWS(Returned Orders), COUNTROWS(Orders), 0)
+This project analyzes global retail sales data using Power BI. It covers sales, profit, discounts, returns, product performance, customer segments, and shipping performance, giving management actionable insights to improve profitability.
 
-Average Shipping Cost = AVERAGE(Orders[Shipping Cost])
+- Developed an interactive Global Retail Sales Dashboard using Power BI
+- Analyzed sales data across regions, categories, and customer segments
+- Evaluated Sales, Profit, Discounts, Returns, and Shipping Performance
+- Identified high- and low-performing regions, products, and customer segments
+- Built interactive KPIs, charts, and slicers to support decision-making
 
-Top 10 Products by Sales = RANKX(ALL(Orders[Product Name]), [Total Sales])
-Dashboard KPIs
-KPI	Value
-Total Sales	$12.64M
-Total Profit	$1.47M
-Profit Margin %	11.61%
-Return Rate %	4.68%
-Dashboard Visualizations
+## 🧩 Business Problem
 
-The dashboard includes:
+The company has large volumes of sales data but needed clarity on where it was profitable and where it was facing problems, including:
 
-Monthly Sales Trend — Line Chart
-Sales by Region — Bar Chart
-Segment Contribution — Donut Chart
-Top 10 Products by Sales — Bar Chart
-Sales vs Target — Gauge
-Interactive Features
-Year Slicer
-Region Slicer
-Segment Slicer
-Category Slicer
-Drill-through Analysis
-Conditional Formatting
-Interactive KPI Cards
-DAX Measures
- Business Questions & Insights
-1. Which regions have the highest and lowest profits?
+- Profit performance varying across regions
+- High discounts potentially reducing overall profit
+- Some customer segments contributing more profit than others
+- Returned orders affecting sales and profitability
+- Uneven product/category revenue performance
+- Cost and profitability differences across shipping modes
+- Variance in regional manager performance
 
-Central is the most profitable region with approximately $311.40K profit.
+## 🎯 Objectives
 
-Canada has the lowest profit at approximately $17.82K.
+- Analyze sales, profit, returns, and regional performance to support data-driven decisions
+- Identify which regions and segments drive the most profit
+- Quantify how discounts and returns affect profitability
+- Track actual sales against regional targets
+- Enable drill-through analysis from Region → Product → Customer
+- Give regional managers a single source of truth for performance
 
-2. Are discounts reducing profits in some orders?
+## 🗂️ Datasets
 
-Yes. Higher discounts tend to reduce profit margins.
+| Table | Type | Purpose |
+|---|---|---|
+| Orders | Fact Table | All sales transactions — order, ship, customer, product, sales, profit, discount, and quantity details |
+| Returns | Dimension Table | Identifies which orders were returned (Order ID, Returned Yes/No, Market) |
+| People | Dimension Table | Assigns a sales manager to each Region |
 
-Deep discounts, especially above 30%, can result in very low or negative profit.
+## 🧹 Data Cleaning & Transformation
 
-Therefore, discounts should be used selectively rather than across all orders.
+- Checked for missing/null values and handled them where required
+- Corrected data types for dates, numbers, and categorical columns
+- Ensured Sales, Profit, Discount, and Quantity were treated as numerical fields
+- Formatted Order Date and Ship Date as date fields
+- Reviewed Postal Code values and handled nulls appropriately
+- Checked for duplicate/unwanted records
+- Verified categorical fields such as Region, Segment, Category, and Ship Mode
 
-3. Which customer segments are most profitable?
+## 🔗 Data Model
 
-Consumer is the most profitable segment with approximately $749.24K profit.
+- **Fact Table:** Orders
+- **Dimension Tables:** Returns, People
+- Orders ↔ Returns joined on **Order ID**
+- Orders ↔ People joined on **Region**
 
-Corporate comes second with approximately $441.21K.
+## 📐 Key DAX Measures
 
-Home Office has the lowest profit at approximately $277.01K.
+```dax
+Total Sales               = SUM(Orders[Sales])
+Total Profit               = SUM(Orders[Profit])
+Total Quantity              = SUM(Orders[Quantity])
+Profit Margin %             = DIVIDE([Total Profit], [Total Sales], 0)
+Return Rate %               = DIVIDE(COUNTROWS(Returned Orders), COUNTROWS(Orders), 0)
+Average Shipping Cost       = AVERAGE(Orders[Shipping Cost])
+Top 10 Products by Sales    = RANKX(ALL(Orders[Product Name]), [Total Sales])
+```
 
-Therefore, Consumer customers should remain a key focus while improving Home Office performance.
+## 📊 Dashboard KPI Cards
 
-4. How many orders are returned per region?
+| KPI | Value |
+|---|---|
+| 💰 Total Sales | 12.64M |
+| 📈 Total Profit | 1.47M |
+| 📊 Profit Margin % | 11.61% |
+| ↩️ Return Rate % | 4.68% |
 
-Canada has the highest number of returned orders and is the main region requiring attention.
+## 📈 Dashboard Visuals
 
-The business should investigate return-related issues, particularly around delivery, product quality, and customer expectations.
+- Line Chart — Monthly Sales Trend
+- Bar Chart — Sales by Region
+- Donut Chart — Segment Contribution
+- Bar Chart — Top 10 Products by Sales
+- Gauge — Sales vs Target
+- Region Details — Drill-Through Page
 
-5. Which products generate the most revenue?
+## 🔍 Key Business Insights
 
-Apple Smart Phone is the top-selling product, generating approximately $87K in sales.
+**Sales by Region:** Central leads with $2.8M in sales; Canada is the smallest region at $67K.
 
-Other strong-performing products include:
+**Segment Contribution:** Consumer drives 51.48% of total sales ($6.51M), Corporate 30.25% ($3.82M), Home Office 18.27% ($2.31M).
 
-Cisco Smart Phone
-Motorola Smart Phone
-Nokia Smart Phone
-6. Which shipping modes are most cost-effective?
+**Top Products:** Apple Smart Phone leads at ~$87K in sales, followed by Cisco, Motorola, and Nokia smartphones.
 
-Standard Class is the dominant and most cost-effective shipping mode.
+**Profitability:** Central is the most profitable region (~$311.4K profit); Canada is the least (~$17.82K). Consumer is the most profitable segment (~$749.24K), followed by Corporate (~$441.21K) and Home Office (~$277.01K).
 
-It accounts for roughly 59% of sales/orders and generates the highest overall profit among shipping modes.
+**Discounts:** Higher discounts tend to reduce profit margins — discounts above 30% can drive very low or negative profit.
 
-The business should encourage Standard Class where fast delivery is not essential.
+**Returns:** Canada has the highest number of returned orders, suggesting issues around delivery, product quality, or customer expectations that need investigation.
 
-7. Are regional sales managers achieving balanced performance?
+**Shipping:** Standard Class is the dominant and most cost-effective shipping mode (~59% of sales/orders) and generates the highest overall profit among shipping modes.
 
-No. Regional performance is not fully balanced.
+**Regional Managers:** Performance is not fully balanced — Aaron Bergman (Central) manages the strongest region, with North also performing strongly.
 
-Aaron Bergman – Central manages the strongest region, while North is also performing strongly.
+## 💡 Recommendations
 
-Key Business Insights
-Central is the strongest region in terms of profitability.
-Canada has the lowest profit and requires attention.
-Canada also has the highest number of returned orders.
-Consumer is the largest and most profitable customer segment.
-Higher discounts can negatively affect profit margins.
-Apple Smart Phone is the top-selling product among the highlighted products.
-Standard Class is the dominant and cost-effective shipping mode.
-Regional manager performance is not fully balanced.
-Business Recommendations
-Optimize Discount Strategy
+- **Optimize discount strategy** — avoid excessive discounts on already low-margin products
+- **Focus on high-performing regions** — strengthen strategies in profitable regions while investigating weaker markets
+- **Monitor returned orders** — identify root causes of high returns and take corrective action
+- **Prioritize top-selling products** — maintain adequate inventory for strong performers
+- **Improve segment-focused strategies** — target strategies at the most profitable customer segments
 
-Avoid excessive discounts on products where margins are already low.
+## ⚠️ Key Challenges
 
-Focus on High-Performing Regions
+- Cleaning and transforming raw retail data (missing values, data types)
+- Selecting the right visuals to represent performance without clutter
+- Building accurate DAX measures for KPIs
+- Setting up slicers, conditional formatting, and drill-through for interactivity
+- Maintaining a clean, professional dashboard layout with multiple KPIs and visuals
 
-Strengthen sales strategies in profitable regions while investigating weaker markets.
+## 🛠️ Power BI Techniques Applied
 
-Monitor Returned Orders
+- **Power Query** — data cleaning, type conversion, de-duplication
+- **Star-schema data modeling** — one fact table, two dimension tables
+- **DAX functions** — SUM, AVERAGE, DIVIDE, COUNTROWS
+- **Core visuals** — line, bar, and donut charts plus a KPI gauge
+- **Slicers** for Year, Region, Segment, and Category
+- **Drill-through pages** from Region → Product → Customer
+- **Conditional formatting** to flag negative profit in red
 
-Identify the reasons behind high returns and take corrective action.
+## ✅ Conclusion
 
-Prioritize Top-Selling Products
+This project delivers an interactive Global Retail Sales Dashboard built in Power BI, analyzing sales, profit, discounts, returns, products, and shipping performance. It identifies high- and low-performing regions, products, and customer segments, quantifies the impact of discounts and returns on profitability, and compares shipping modes and regional performance — giving management a clear, data-driven view of the business.
 
-Maintain adequate inventory for products generating strong sales.
+---
 
-Improve Segment-Focused Strategies
+## 📁 Repository Contents
 
-Develop targeted strategies for customer segments contributing more profit.
+- `Global_Retail_Sales_Project_PPT.pptx` — Full project presentation with methodology, DAX measures, and dashboard screenshots
 
-Project Files
-File / Folder	Description
-Global_Retail_Sales_Dashboard.pbix	Power BI dashboard containing the data model, DAX measures, visuals, slicers, and interactive analysis
-Dataset/	Contains the Global Superstore dataset used for analysis
-Dashboard/	Contains Power BI dashboard screenshots
-Documentation/	Contains project documentation and detailed analysis
-PPT/	Contains the project presentation
-README.md	Contains project overview, objectives, workflow, insights, and documentation
-Power BI Techniques Applied
-Power Query for data cleaning and transformation
-Data type conversion
-Data de-duplication
-Data modeling
-Fact and dimension tables
-DAX measures
-SUM
-AVERAGE
-DIVIDE
-COUNTROWS
-RANKX
-Line Charts
-Bar Charts
-Donut Charts
-KPI Cards
-Gauge
-Slicers
-Drill-through
-Conditional Formatting
-Key Challenges
-Cleaning and transforming raw retail data.
-Handling missing values and incorrect data types.
-Creating accurate DAX measures.
-Selecting appropriate visualizations.
-Creating meaningful KPIs.
-Implementing interactive slicers and drill-through.
-Maintaining a clean and professional dashboard layout.
-Conclusion
+## 🧰 Tools Used
 
-The Global Retail Sales Dashboard successfully transforms raw retail sales data into meaningful and actionable business insights using Power BI.
-
-The project analyzes Sales, Profit, Discounts, Returns, Products, Customer Segments, Regions, and Shipping Performance.
-
-Through Power Query, DAX, data modeling, KPIs, charts, slicers, and drill-through analysis, the dashboard provides an interactive and comprehensive view of business performance.
-
-The analysis identified high- and low-performing regions, products, and customer segments while also highlighting the impact of discounts and returned orders on profitability.
-
-Overall, this project demonstrates practical skills in Data Analytics, Business Intelligence, Power BI, Power Query, DAX, Data Cleaning, Data Modeling, and Data Visualization.
-
-Future Enhancements
-Automated data refresh
-Real-time data integration
-Sales forecasting
-Profit forecasting
-Customer segmentation
-Predictive analytics
-Advanced KPI monitoring
-Skills Demonstrated
-
-Power BI | Power Query | DAX | Data Cleaning | Data Transformation | Data Modeling | Data Visualization | Business Intelligence | Business Analytics | Excel
+- Power BI Desktop
+- DAX
+- Power Query
