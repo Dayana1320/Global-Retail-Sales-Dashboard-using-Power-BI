@@ -1,6 +1,6 @@
-# 📊 Global Retail Sales Dashboard using Power BI
+# Global Retail Sales Dashboard using Power BI
 
-## 🚀 Project Overview
+## Project Overview
 
 The **Global Retail Sales Dashboard** is an interactive Business Intelligence project developed using **Microsoft Power BI**.
 
@@ -10,7 +10,7 @@ The main objective is to transform raw retail data into meaningful business insi
 
 ---
 
-## 🎯 Business Problem
+##  Business Problem
 
 Global retail businesses generate large amounts of sales data across different regions, markets, products, customers, and shipping modes.
 
@@ -28,7 +28,7 @@ This project addresses these challenges by creating an interactive Power BI dash
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 * Analyze overall sales performance
 * Analyze total profit and profit margin
@@ -44,7 +44,7 @@ This project addresses these challenges by creating an interactive Power BI dash
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 * Microsoft Power BI
 * Power Query
@@ -58,7 +58,7 @@ This project addresses these challenges by creating an interactive Power BI dash
 
 ---
 
-## 📂 Dataset
+## Dataset
 
 The project uses the **Global Superstore** retail dataset.
 
@@ -89,7 +89,7 @@ The project uses the **Global Superstore** retail dataset.
 
 ---
 
-## 🔄 Project Workflow
+## Project Workflow
 
 ### 1. Data Collection
 
@@ -136,7 +136,7 @@ Analyzed the dashboard to identify important trends, patterns, and business oppo
 
 ---
 
-## 📊 Dashboard Features
+## Dashboard Features
 
 ### KPI Cards
 
@@ -172,7 +172,7 @@ Analyzed the dashboard to identify important trends, patterns, and business oppo
 
 ---
 
-## 💡 Business Questions
+## Business Questions
 
 The dashboard answers the following business questions:
 
@@ -192,7 +192,7 @@ The dashboard answers the following business questions:
 
 ---
 
-## 📈 Key Insights
+## Key Insights
 
 * Regional sales and profitability vary significantly.
 * Some regions generate high sales but lower profits.
@@ -205,7 +205,7 @@ The dashboard answers the following business questions:
 
 ---
 
-## 🎯 Business Impact
+## Business Impact
 
 This dashboard helps businesses:
 
@@ -228,14 +228,15 @@ This dashboard helps businesses:
 
 
 ```markdown
-![Global Retail Sales Dashboard](<img width="1060" height="597" alt="Screenshot 2026-09-06 174132" src="https://github.com/user-attachments/assets/b6b6dad4-d550-4e6c-b951-9d78d3af62f8" />
+![Global Retail Sales Dashboard](<img width="1060" height="597" alt="Main Dashboard" src="https://github.com/user-attachments/assets/8506fc82-cdbf-48e6-aa27-1f29fd1bbc79" />
 )
 ```
 
 ### Regional Analysis
 
 ```markdown
-![Regional Analysis](<img width="1062" height="596" alt="Screenshot 2026-09-06 174201" src="https://github.com/user-attachments/assets/191b9e07-07c8-4750-93d4-83b3c6f2608f" />
+![Regional Analysis](<img width="1062" height="596" alt="region details" src="https://github.com/user-attachments/assets/dcc799be-793b-466e-b1fd-7aff663567c7" />
+
 )
 ```
 
