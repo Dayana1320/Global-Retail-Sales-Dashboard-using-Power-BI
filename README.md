@@ -14,10 +14,10 @@ An interactive Power BI dashboard analyzing global retail sales, profit, discoun
 ## 📸 Dashboard Preview
 
 ### Main Dashboard
-![Global Retail Sales Dashboard](assets/main_dashboard.png)
+[Global Retail Sales Dashboard](assets/main_dashboard.png)
 
 ### Region Details — Drill-Through Page
-![Region Details](assets/region_details.png)
+[Region Details](assets/region_details.png)
 
 ---
 
@@ -102,30 +102,56 @@ Top 10 Products by Sales   = RANKX(ALL(Orders[Product Name]), [Total Sales])
 
 ## 📈 Dashboard Visuals
 
-- Line Chart — Monthly Sales Trend
-- Bar Chart — Sales by Region
-- Donut Chart — Segment Contribution
-- Bar Chart — Top 10 Products by Sales
-- Gauge — Sales vs Target
-- Region Details — Drill-through page with Sales by Product, Profit by Product, and Sales/Profit by Customer
+**Main Dashboard**
 
-## 🔍 Key Business Insights
+| Visual | Type | Description |
+|---|---|---|
+| Total Sales, Total Profit, Profit Margin %, Return Rate % | KPI Cards | High-level summary of overall business performance |
+| Monthly Sales Trend | Line Chart | Tracks sales month-over-month across the year |
+| Sales by Region | Bar Chart | Compares total sales across Central, South, North, Oceania, and Southeast Asia |
+| Segment Contribution | Donut Chart | Breaks down sales share by Consumer, Corporate, and Home Office |
+| Top 10 Products by Sales | Bar Chart | Ranks best-selling products (Apple, Cisco, Motorola, Nokia smartphones, etc.) |
+| Sales vs Target | Gauge | Compares actual sales (12.64M) against a target of 25.29M |
+| Year / Region / Segment / Category | Slicers | Interactive filters that update all visuals on the page |
 
-**Sales by Region:** Central leads with $2.8M in sales; Canada is the smallest region at $67K.
+**Region Details (Drill-Through Page)**
 
-**Segment Contribution:** Consumer drives 51.48% of total sales ($6.51M), Corporate 30.25% ($3.82M), Home Office 18.27% ($2.31M).
+| Visual | Type | Description |
+|---|---|---|
+| Total Sales, Total Profit, Profit Margin % | KPI Cards | Region-level performance summary |
+| Sales by Product | Bar Chart | Product-level sales for the selected region |
+| Profit by Product | Bar Chart | Product-level profit for the selected region |
+| Sales and Profit by Customer | Table | Customer-level breakdown with conditional formatting flagging negative profit in red |
+| US Regional Map | Map Visual | Highlights sub-regions (e.g., North Central, South, West) within the selected region |
 
-**Top Products:** Apple Smart Phone leads at ~$87K in sales, followed by Cisco, Motorola, and Nokia smartphones.
+## 🔍 Key Business Insights (Q&A)
 
-**Profitability:** Central is the most profitable region (~$311.4K profit) , Canada is the least (~$17.82K), Consumer is the most profitable segment (~$749.24K), followed by Corporate (~$441.21K) and Home Office (~$277.01K).
+**Q1. Which regions have the highest and lowest profits?**
+Central is the most profitable region, with about $311.40K in profit. Canada has the lowest profit, at about $17.82K.
 
-**Discounts:** Higher discounts tend to reduce profit margins — discounts above 30% can drive very low or negative profit.
+**Q2. Are discounts reducing profits in some orders?**
+Yes. Higher discounts tend to reduce profit margins. Deep discounts, especially above 30%, can result in very low or negative profit. Discounts should be used selectively rather than applied across all orders.
 
-**Returns:** Canada has the highest number of returned orders, suggesting issues around delivery, product quality, or customer expectations that need investigation.
+**Q3. Which segments are most profitable?**
+Consumer is the most profitable segment, at about $749.24K in profit. Corporate comes second at about $441.21K. Home Office is the lowest at about $277.01K. Consumer should remain a key focus while improving Home Office performance.
 
-**Shipping:** Standard Class is the dominant and most cost-effective shipping mode (~59% of sales/orders) and generates the highest overall profit among shipping modes.
+**Q4. How many orders are returned per region?**
+Canada has the highest number of returned orders and is the main region requiring attention. Other regions have comparatively fewer returns. This suggests return-related issues in Canada should be investigated, particularly around delivery, product quality, and customer expectations.
 
-**Regional Managers:** Performance is not fully balanced — Aaron Bergman (Central) manages the strongest region, with North also performing strongly.
+**Q5. Which products generate the most revenue?**
+Apple Smart Phone is the top-selling product, generating approximately $87K in sales. Other strong products include Cisco Smart Phone, Motorola Smart Phone, and Nokia Smart Phone.
+
+**Q6. Which shipping modes are most cost-effective?**
+Standard Class is the dominant and most cost-effective shipping mode. It accounts for roughly 59% of sales/orders and generates the highest overall profit among shipping modes. The business should encourage Standard Class where fast delivery isn't essential.
+
+**Q7. Are regional sales managers achieving balanced performance?**
+No, performance is not fully balanced. Aaron Bergman (Central) manages the strongest region, and North is also performing strongly, while other regions lag behind.
+
+**Q8. Which regions lead and lag in total sales?**
+Central leads with $2.8M in sales, followed by South ($1.6M), North ($1.2M), and Oceania ($1.1M). Canada is the smallest region shown, at $67K in sales.
+
+**Q9. How does each customer segment contribute to total sales?**
+Consumer drives 51.48% of total sales ($6.51M), Corporate contributes 30.25% ($3.82M), and Home Office is the smallest segment at 18.27% ($2.31M).
 
 ## 💡 Recommendations
 
