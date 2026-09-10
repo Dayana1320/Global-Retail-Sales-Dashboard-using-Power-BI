@@ -147,12 +147,6 @@ Standard Class is the dominant and most cost-effective shipping mode. It account
 **Q7. Are regional sales managers achieving balanced performance?**
 No, performance is not fully balanced. Aaron Bergman (Central) manages the strongest region, and North is also performing strongly, while other regions lag behind.
 
-**Q8. Which regions lead and lag in total sales?**
-Central leads with $2.8M in sales, followed by South ($1.6M), North ($1.2M), and Oceania ($1.1M). Canada is the smallest region shown, at $67K in sales.
-
-**Q9. How does each customer segment contribute to total sales?**
-Consumer drives 51.48% of total sales ($6.51M), Corporate contributes 30.25% ($3.82M), and Home Office is the smallest segment at 18.27% ($2.31M).
-
 ## 💡 Recommendations
 
 - **Optimize discount strategy** — avoid excessive discounts on already low-margin products
@@ -188,8 +182,8 @@ This project delivers an interactive Global Retail Sales Dashboard built in Powe
 ## 📁 Repository Structure
 
 ```
-├── Global_Retail_Sales_Project.pbix      # Power BI dashboard file
 ├── GlobalSuperstore_Data.xlsx            # Source data (Orders, Returns, People)
+├── Global_Retail_Sales_Project.pbix      # Power BI dashboard file
 ├── Global_Retail_Sales_Project_PPT.pptx  # Project presentation
 ├── assets/
 │   ├── main_dashboard.png                # Main dashboard screenshot
