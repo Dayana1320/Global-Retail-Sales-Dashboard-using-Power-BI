@@ -14,10 +14,10 @@ An interactive Power BI dashboard analyzing global retail sales, profit, discoun
 ## 📸 Dashboard Preview
 
 ### Main Dashboard
-[Global Retail Sales Dashboard](assets/main_dashboard.png)
+![Global Retail Sales Dashboard](main_dashboard.png)
 
 ### Region Details — Drill-Through Page
-[Region Details](assets/region_details.png)
+![Region Details](region_details.png)
 
 ---
 
