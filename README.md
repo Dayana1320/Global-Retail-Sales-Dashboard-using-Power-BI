@@ -117,7 +117,7 @@ Top 10 Products by Sales   = RANKX(ALL(Orders[Product Name]), [Total Sales])
 
 **Top Products:** Apple Smart Phone leads at ~$87K in sales, followed by Cisco, Motorola, and Nokia smartphones.
 
-**Profitability:** Central is the most profitable region (~$311.4K profit); Canada is the least (~$17.82K). Consumer is the most profitable segment (~$749.24K), followed by Corporate (~$441.21K) and Home Office (~$277.01K).
+**Profitability:** Central is the most profitable region (~$311.4K profit) , Canada is the least (~$17.82K), Consumer is the most profitable segment (~$749.24K), followed by Corporate (~$441.21K) and Home Office (~$277.01K).
 
 **Discounts:** Higher discounts tend to reduce profit margins — discounts above 30% can drive very low or negative profit.
 
