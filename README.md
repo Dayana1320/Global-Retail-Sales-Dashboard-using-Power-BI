@@ -1,8 +1,23 @@
-# Global Retail Sales Dashboard — Power BI
+# 🌍 Global Retail Sales Dashboard — Power BI
 
 An interactive Power BI dashboard analyzing global retail sales, profit, discounts, returns, products, customers, and shipping performance to support data-driven business decisions.
 
 **Prepared by:** Velagada Dayana
+
+![Total Sales](https://img.shields.io/badge/Total%20Sales-12.64M-blue)
+![Total Profit](https://img.shields.io/badge/Total%20Profit-1.47M-green)
+![Profit Margin](https://img.shields.io/badge/Profit%20Margin-11.61%25-brightgreen)
+![Return Rate](https://img.shields.io/badge/Return%20Rate-4.68%25-orange)
+
+---
+
+## 📸 Dashboard Preview
+
+### Main Dashboard
+![Global Retail Sales Dashboard](assets/main_dashboard.png)
+
+### Region Details — Drill-Through Page
+![Region Details](assets/region_details.png)
 
 ---
 
@@ -39,11 +54,13 @@ The company has large volumes of sales data but needed clarity on where it was p
 
 ## 🗂️ Datasets
 
-| Table | Type | Purpose |
-|---|---|---|
-| Orders | Fact Table | All sales transactions — order, ship, customer, product, sales, profit, discount, and quantity details |
-| Returns | Dimension Table | Identifies which orders were returned (Order ID, Returned Yes/No, Market) |
-| People | Dimension Table | Assigns a sales manager to each Region |
+Source data: `GlobalSuperstore_Data.xlsx`
+
+| Table | Type | Purpose | Key Columns |
+|---|---|---|---|
+| **Orders** | Fact Table | All sales transactions | Order ID, Order Date, Ship Date, Ship Mode, Customer, Segment, Region, Market, Category, Sub-Category, Product Name, Sales, Quantity, Discount, Profit, Shipping Cost, Order Priority |
+| **Returns** | Dimension Table | Identifies which orders were returned | Returned (Yes/No), Order ID, Market |
+| **People** | Dimension Table | Assigns a sales manager to each Region | Person, Region |
 
 ## 🧹 Data Cleaning & Transformation
 
@@ -66,12 +83,12 @@ The company has large volumes of sales data but needed clarity on where it was p
 
 ```dax
 Total Sales               = SUM(Orders[Sales])
-Total Profit               = SUM(Orders[Profit])
-Total Quantity              = SUM(Orders[Quantity])
-Profit Margin %             = DIVIDE([Total Profit], [Total Sales], 0)
-Return Rate %               = DIVIDE(COUNTROWS(Returned Orders), COUNTROWS(Orders), 0)
-Average Shipping Cost       = AVERAGE(Orders[Shipping Cost])
-Top 10 Products by Sales    = RANKX(ALL(Orders[Product Name]), [Total Sales])
+Total Profit              = SUM(Orders[Profit])
+Total Quantity             = SUM(Orders[Quantity])
+Profit Margin %            = DIVIDE([Total Profit], [Total Sales], 0)
+Return Rate %              = DIVIDE(COUNTROWS(Returned Orders), COUNTROWS(Orders), 0)
+Average Shipping Cost      = AVERAGE(Orders[Shipping Cost])
+Top 10 Products by Sales   = RANKX(ALL(Orders[Product Name]), [Total Sales])
 ```
 
 ## 📊 Dashboard KPI Cards
@@ -90,7 +107,7 @@ Top 10 Products by Sales    = RANKX(ALL(Orders[Product Name]), [Total Sales])
 - Donut Chart — Segment Contribution
 - Bar Chart — Top 10 Products by Sales
 - Gauge — Sales vs Target
-- Region Details — Drill-Through Page
+- Region Details — Drill-through page with Sales by Product, Profit by Product, and Sales/Profit by Customer
 
 ## 🔍 Key Business Insights
 
@@ -130,7 +147,7 @@ Top 10 Products by Sales    = RANKX(ALL(Orders[Product Name]), [Total Sales])
 
 - **Power Query** — data cleaning, type conversion, de-duplication
 - **Star-schema data modeling** — one fact table, two dimension tables
-- **DAX functions** — SUM, AVERAGE, DIVIDE, COUNTROWS
+- **DAX functions** — SUM, AVERAGE, DIVIDE, COUNTROWS, RANKX
 - **Core visuals** — line, bar, and donut charts plus a KPI gauge
 - **Slicers** for Year, Region, Segment, and Category
 - **Drill-through pages** from Region → Product → Customer
@@ -142,12 +159,28 @@ This project delivers an interactive Global Retail Sales Dashboard built in Powe
 
 ---
 
-## 📁 Repository Contents
+## 📁 Repository Structure
 
-- `Global_Retail_Sales_Project_PPT.pptx` — Full project presentation with methodology, DAX measures, and dashboard screenshots
+```
+├── Global_Retail_Sales_Project.pbix      # Power BI dashboard file
+├── GlobalSuperstore_Data.xlsx            # Source data (Orders, Returns, People)
+├── Global_Retail_Sales_Project_PPT.pptx  # Project presentation
+├── assets/
+│   ├── main_dashboard.png                # Main dashboard screenshot
+│   └── region_details.png                # Region details drill-through screenshot
+└── README.md
+```
+
+## 🚀 How to Use
+
+1. Clone this repository
+2. Open `Global_Retail_Sales_Project.pbix` in [Power BI Desktop](https://powerbi.microsoft.com/desktop/)
+3. Explore the dashboard using the Year, Region, Segment, and Category slicers
+4. Click on a region bar to drill through to the **Region Details** page
 
 ## 🧰 Tools Used
 
 - Power BI Desktop
 - DAX
 - Power Query
+- Microsoft Excel (source data)
