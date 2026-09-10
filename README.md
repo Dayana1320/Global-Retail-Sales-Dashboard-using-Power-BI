@@ -140,18 +140,18 @@ Analyzed the dashboard to identify important trends, patterns, and business oppo
 
 ### KPI Cards
 
-* 💰 Total Sales
-* 📈 Total Profit
-* 📊 Profit Margin %
-* 🔄 Return Rate %
+* Total Sales
+* Total Profit
+* Profit Margin %
+* Return Rate %
 
 ### Visualizations
 
-* 📈 Monthly Sales Trend
-* 📊 Sales by Region
-* 🍩 Segment Contribution
-* 🏆 Top 10 Products by Sales
-* 🎯 Sales vs Target
+* Monthly Sales Trend
+* Sales by Region
+* Segment Contribution
+* Top 10 Products by Sales
+* Sales vs Target
 
 
 ### Interactive Filters
@@ -225,20 +225,18 @@ This dashboard helps businesses:
 
 ### Executive Overview
 
-
-
-```markdown
-![Global Retail Sales Dashboard](<img width="1060" height="597" alt="Main Dashboard" src="https://github.com/user-attachments/assets/8506fc82-cdbf-48e6-aa27-1f29fd1bbc79" />
-)
-```
+<p align="center">
+  <img src="<img width="1060" height="597" alt="Main Dashboard" src="https://github.com/user-attachments/assets/4e3cb020-477e-48a9-9942-971abd83afa7" />
+" width="1000">
+</p>
 
 ### Regional Analysis
 
-```markdown
-![Regional Analysis](<img width="1062" height="596" alt="region details" src="https://github.com/user-attachments/assets/dcc799be-793b-466e-b1fd-7aff663567c7" />
+<p align="center">
+  <img src="<img width="1062" height="596" alt="region details" src="https://github.com/user-attachments/assets/d1391ead-d00a-4ca7-8043-1e05d7e6dd0b" />
 
-)
-```
+" width="1000">
+</p>
 
 ## 📁 Project Structure
 
